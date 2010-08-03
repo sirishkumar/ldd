@@ -1,0 +1,23 @@
+- To create static library
+  
+  gcc -c prog1.c
+  gcc -c prog2.c
+
+Pack this libraries using:
+
+  ar rcs libmylib.a prog1.c prog2.c 
+
+
+You can see the contents of this library using
+
+ar -t libmylib.a
+
+
+- TO creta dynamic library
+
+
+ gcc -c -fpic prog1.c
+ gcc -c -fpic prog2.c
+
+
+ gcc -shared -o libmylib.so prog1.o prog2.o
