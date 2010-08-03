@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <prog2.h>
 
 int fibnacci(int no)
 {

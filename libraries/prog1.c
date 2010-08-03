@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <prog1.h>
 
 int findmax(int a , int b)
 {

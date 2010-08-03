@@ -1,7 +1,7 @@
 - To create static library
   
-  gcc -c prog1.c
-  gcc -c prog2.c
+  gcc -c -I. prog1.c
+  gcc -c -I. prog2.c
 
 Pack this libraries using:
 
@@ -12,12 +12,19 @@ You can see the contents of this library using
 
 ar -t libmylib.a
 
+To Compile our test application
+gcc mytestapp.c libmylib.a -L. -I. -o mytestapp_static
+
 
 - TO creta dynamic library
 
 
- gcc -c -fpic prog1.c
- gcc -c -fpic prog2.c
+ gcc -c -fpic -I. prog1.c
+ gcc -c -fpic -I. prog2.c
 
 
- gcc -shared -o libmylib.so prog1.o prog2.o
+ gcc -shared   -o libmylib.so prog1.o prog2.o
+
+To build the application:
+
+gcc mytestapp.c libmylib.so -I. -o mytestapp
