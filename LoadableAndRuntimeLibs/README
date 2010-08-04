@@ -1,0 +1,10 @@
+Applications can use shared objects as loadtime or runtime libraries also refered as dynamic linking
+
+- A libarary is refered to as loadtime if it is attached to process at loadtime
+
+- A dynamic lib is refered to as runtime if it is attached to process space during application usage of that shared library or at execution
+
+  Applications using dynamic linking need to be compiled with libdl which facilitates dynamic linking
+
+  
+      gcc MyAppUsingRunTimeLib.c -I. -ldl -o MyAppUsingRunTimeLib
