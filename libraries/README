@@ -32,3 +32,8 @@ gcc mytestapp.c libmylib.so -I. -o mytestapp
 - To convert a static library to dynamic library
 
 gcc -shared -o mytestapp_a_to_so.so libmylib.a
+
+1. If you don't want to have to deal with the LD_LIBRARY_PATH variable, you can add the linker -rpath option to the gcc command line. In your case, this would be:
+
+	gcc ... -Wl,-rpath=/home/npalko/Development/POCO/lib/Linux/x86_64
+	This effectively hardcodes that path in the executable, so it may or may not be suitable for your purposes.	
