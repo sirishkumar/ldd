@@ -28,3 +28,7 @@ gcc mytestapp.c libmylib.a -L. -I. -o mytestapp_static
 To build the application:
 
 gcc mytestapp.c libmylib.so -I. -o mytestapp
+
+- To convert a static library to dynamic library
+
+gcc -shared -o mytestapp_a_to_so.so libmylib.a
