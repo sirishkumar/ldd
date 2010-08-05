@@ -1,0 +1,5 @@
+- unistd( Unique Standard ) is the name of header file which provides access to the posix operating system api
+- Kernal Module : Modules are kernal code which can loaded and unloaded at runtime. 
+- For creating new system call we need to modify following files
+
+  
