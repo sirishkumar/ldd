@@ -2,4 +2,9 @@
 - Kernal Module : Modules are kernal code which can loaded and unloaded at runtime. 
 - For creating new system call we need to modify following files
 
-  
+ Download kernal
+
+1. make distclean
+2. sudo make defconfig
+3. make
+4. make install
