@@ -1,0 +1,18 @@
+Mui	ui.c	/^main()$/
+canHandle	config.h	3
+displaymenu	ui.c	/^void displaymenu()$/
+drawImage	config.h	4
+i	config.c	4
+imageHandler	config.h	6
+jpgCanHandle	jpgImageHandler.h	/^bool jpgCanHandle(char *path)$/
+jpgdrawImage	jpgImageHandler.h	/^void jpgdrawImage(const char *filePath)$/
+pcanHandler	config.h	8
+pdrawImage	config.h	9
+registerHandler	config.c	/^void registerHandler(char *imageType,struct imageH/
+register_handler	jpgImageHandler.h	/^void register_handler()$/
+vconvertImage	viml (1).c	/^void vconvertImage(const char*path)$/
+vconvertImage	viml.c	/^void vconvertImage(const char*path)$/
+vdrawImage	viml (1).c	/^void vdrawImage(char* path)$/
+vdrawImage	viml.c	/^void vdrawImage(char* path)$/
+vsaveImage	viml (1).c	/^void vsaveImage(const char*path)$/
+vsaveImage	viml.c	/^void vsaveImage(const char*path)$/

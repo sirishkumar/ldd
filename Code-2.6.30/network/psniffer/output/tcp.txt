@@ -1,0 +1,1368 @@
+Mon Apr 28 08:30:13 IST 2008
+	 ----------------------------------
+source port no : 57143
+destination port no : 8000
+seq number : 813643943
+ack number : 0
+window size : 32792
+	 ----------------------------------
+Mon Apr 28 08:30:13 IST 2008
+	 ----------------------------------
+source port no : 57143
+destination port no : 8000
+seq number : 813643943
+ack number : 0
+window size : 32792
+	 ----------------------------------
+Mon Apr 28 08:30:13 IST 2008
+	 ----------------------------------
+source port no : 8000
+destination port no : 57143
+seq number : 820410778
+ack number : 813643944
+window size : 32768
+	 ----------------------------------
+Mon Apr 28 08:30:14 IST 2008
+	 ----------------------------------
+source port no : 8000
+destination port no : 57143
+seq number : 820410778
+ack number : 813643944
+window size : 32768
+	 ----------------------------------
+Mon Apr 28 08:30:14 IST 2008
+	 ----------------------------------
+source port no : 57143
+destination port no : 8000
+seq number : 813643944
+ack number : 820410779
+window size : 513
+	 ----------------------------------
+Mon Apr 28 08:30:14 IST 2008
+	 ----------------------------------
+source port no : 57143
+destination port no : 8000
+seq number : 813643944
+ack number : 820410779
+window size : 513
+	 ----------------------------------
+Mon Apr 28 08:30:14 IST 2008
+	 ----------------------------------
+source port no : 57143
+destination port no : 8000
+seq number : 813643944
+ack number : 820410779
+window size : 513
+	 ----------------------------------
+Mon Apr 28 08:30:14 IST 2008
+	 ----------------------------------
+source port no : 57143
+destination port no : 8000
+seq number : 813643944
+ack number : 820410779
+window size : 513
+	 ----------------------------------
+Mon Apr 28 08:30:14 IST 2008
+	 ----------------------------------
+source port no : 8000
+destination port no : 57143
+seq number : 820410779
+ack number : 813643945
+window size : 512
+	 ----------------------------------
+Mon Apr 28 08:30:14 IST 2008
+	 ----------------------------------
+source port no : 8000
+destination port no : 57143
+seq number : 820410779
+ack number : 813643945
+window size : 512
+	 ----------------------------------
+Mon Dec 29 10:24:23 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339796741
+ack number : 3641146046
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:23 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641146046
+ack number : 339796789
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:23 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339796789
+ack number : 3641146094
+window size : 38898
+	 ----------------------------------
+Mon Dec 29 10:24:23 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339796789
+ack number : 3641146094
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:23 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641146094
+ack number : 339796837
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:23 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339796837
+ack number : 3641146142
+window size : 38898
+	 ----------------------------------
+Mon Dec 29 10:24:24 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339796837
+ack number : 3641146142
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:24 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641146142
+ack number : 339796885
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:24 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339796885
+ack number : 3641146190
+window size : 38898
+	 ----------------------------------
+Mon Dec 29 10:24:24 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339796885
+ack number : 3641146190
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:24 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641146190
+ack number : 339796933
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:24 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339796933
+ack number : 3641146238
+window size : 38898
+	 ----------------------------------
+Mon Dec 29 10:24:24 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339796933
+ack number : 3641146238
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:24 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641146238
+ack number : 339796981
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:24 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339796981
+ack number : 3641146286
+window size : 38898
+	 ----------------------------------
+Mon Dec 29 10:24:24 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339796981
+ack number : 3641146286
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:24 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641146286
+ack number : 339797029
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:24 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797029
+ack number : 3641146334
+window size : 38898
+	 ----------------------------------
+Mon Dec 29 10:24:25 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797029
+ack number : 3641146334
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:25 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641146334
+ack number : 339797077
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:25 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797077
+ack number : 3641146382
+window size : 38898
+	 ----------------------------------
+Mon Dec 29 10:24:25 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797077
+ack number : 3641146382
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:25 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641146382
+ack number : 339797125
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:25 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797125
+ack number : 3641146430
+window size : 38898
+	 ----------------------------------
+Mon Dec 29 10:24:25 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797125
+ack number : 3641146430
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:25 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641146430
+ack number : 339797173
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:25 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797173
+ack number : 3641146478
+window size : 38898
+	 ----------------------------------
+Mon Dec 29 10:24:25 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797173
+ack number : 3641146478
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:25 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641146478
+ack number : 339797221
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:25 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797221
+ack number : 3641146526
+window size : 38898
+	 ----------------------------------
+Mon Dec 29 10:24:25 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797221
+ack number : 3641146526
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:25 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641146526
+ack number : 339797269
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:25 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797269
+ack number : 3641146574
+window size : 38898
+	 ----------------------------------
+Mon Dec 29 10:24:26 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797269
+ack number : 3641146574
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:26 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641146574
+ack number : 339797317
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:26 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797317
+ack number : 3641146622
+window size : 38898
+	 ----------------------------------
+Mon Dec 29 10:24:26 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797317
+ack number : 3641146622
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:26 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641146622
+ack number : 339797365
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:26 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797365
+ack number : 3641146670
+window size : 38898
+	 ----------------------------------
+Mon Dec 29 10:24:26 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797365
+ack number : 3641146670
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:26 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641146670
+ack number : 339797413
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:26 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797413
+ack number : 3641146718
+window size : 38898
+	 ----------------------------------
+Mon Dec 29 10:24:26 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797413
+ack number : 3641146718
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:26 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641146718
+ack number : 339797461
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:26 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797461
+ack number : 3641146766
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:26 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797461
+ack number : 3641146766
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:26 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641146766
+ack number : 339797509
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:26 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797509
+ack number : 3641146814
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:26 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797509
+ack number : 3641146814
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:26 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641146814
+ack number : 339797557
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:26 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797557
+ack number : 3641146862
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:27 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797557
+ack number : 3641146862
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:27 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641146862
+ack number : 339797605
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:27 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797605
+ack number : 3641146910
+window size : 38898
+	 ----------------------------------
+Mon Dec 29 10:24:28 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797605
+ack number : 3641146910
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:28 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641146910
+ack number : 339797653
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:28 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797653
+ack number : 3641146958
+window size : 38898
+	 ----------------------------------
+Mon Dec 29 10:24:28 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797653
+ack number : 3641146958
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:28 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641146958
+ack number : 339797701
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:28 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797701
+ack number : 3641147006
+window size : 38898
+	 ----------------------------------
+Mon Dec 29 10:24:28 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797701
+ack number : 3641147006
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:28 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641147006
+ack number : 339797749
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:28 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797749
+ack number : 3641147054
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:28 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641147054
+ack number : 339797797
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:28 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797797
+ack number : 3641147102
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:28 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641147102
+ack number : 339797845
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:28 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797845
+ack number : 3641147150
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:28 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797845
+ack number : 3641147150
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:28 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641147150
+ack number : 339797893
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:28 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797893
+ack number : 3641147198
+window size : 38898
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797893
+ack number : 3641147198
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641147198
+ack number : 339797941
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797941
+ack number : 3641147246
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641147246
+ack number : 339797989
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797989
+ack number : 3641147294
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339797989
+ack number : 3641147294
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641147294
+ack number : 339798037
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798037
+ack number : 3641147342
+window size : 38898
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798037
+ack number : 3641147342
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641147342
+ack number : 339798085
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798085
+ack number : 3641147390
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641147390
+ack number : 339798133
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798133
+ack number : 3641147438
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641147438
+ack number : 339798181
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798181
+ack number : 3641147486
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641147486
+ack number : 339798229
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798229
+ack number : 3641147534
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798229
+ack number : 3641147534
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641147534
+ack number : 339798277
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798277
+ack number : 3641147582
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798277
+ack number : 3641147582
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641147582
+ack number : 339798325
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798325
+ack number : 3641147630
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641147630
+ack number : 339798373
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798373
+ack number : 3641147678
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798373
+ack number : 3641147678
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641147678
+ack number : 339798421
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798421
+ack number : 3641147726
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798421
+ack number : 3641147726
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641147726
+ack number : 339798469
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798469
+ack number : 3641147774
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641147774
+ack number : 339798517
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798517
+ack number : 3641147822
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641147822
+ack number : 339798565
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798565
+ack number : 3641147870
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641147870
+ack number : 339798613
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798613
+ack number : 3641147918
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798613
+ack number : 3641147918
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641147918
+ack number : 339798661
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798661
+ack number : 3641147966
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798661
+ack number : 3641147966
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641147966
+ack number : 339798709
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798709
+ack number : 3641148014
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641148014
+ack number : 339798757
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798757
+ack number : 3641148062
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798757
+ack number : 3641148062
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641148062
+ack number : 339798805
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798805
+ack number : 3641148110
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798805
+ack number : 3641148110
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641148110
+ack number : 339798853
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798853
+ack number : 3641148158
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641148158
+ack number : 339798901
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798901
+ack number : 3641148206
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798901
+ack number : 3641148206
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641148206
+ack number : 339798949
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798949
+ack number : 3641148254
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798949
+ack number : 3641148254
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641148254
+ack number : 339798997
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798997
+ack number : 3641148302
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339798997
+ack number : 3641148302
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641148302
+ack number : 339799045
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339799045
+ack number : 3641148350
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339799045
+ack number : 3641148350
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641148350
+ack number : 339799093
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339799093
+ack number : 3641148398
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641148398
+ack number : 339799141
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:29 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339799141
+ack number : 3641148446
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:30 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339799141
+ack number : 3641148446
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:30 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641148446
+ack number : 339799189
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:30 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339799189
+ack number : 3641148494
+window size : 38898
+	 ----------------------------------
+Mon Dec 29 10:24:30 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339799189
+ack number : 3641148494
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:30 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641148494
+ack number : 339799237
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:30 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339799237
+ack number : 3641148542
+window size : 38898
+	 ----------------------------------
+Mon Dec 29 10:24:30 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339799237
+ack number : 3641148542
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:30 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641148542
+ack number : 339799285
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:30 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339799285
+ack number : 3641148590
+window size : 38898
+	 ----------------------------------
+Mon Dec 29 10:24:30 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339799285
+ack number : 3641148590
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:30 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641148590
+ack number : 339799333
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:30 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339799333
+ack number : 3641148638
+window size : 38898
+	 ----------------------------------
+Mon Dec 29 10:24:30 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641148638
+ack number : 339799333
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:30 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339799333
+ack number : 3641148686
+window size : 38886
+	 ----------------------------------
+Mon Dec 29 10:24:30 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641148686
+ack number : 339799333
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:30 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339799333
+ack number : 3641148734
+window size : 38874
+	 ----------------------------------
+Mon Dec 29 10:24:30 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641148734
+ack number : 339799333
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:30 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339799333
+ack number : 3641148766
+window size : 38866
+	 ----------------------------------
+Mon Dec 29 10:24:30 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641148766
+ack number : 339799333
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:30 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339799333
+ack number : 3641148862
+window size : 38842
+	 ----------------------------------
+Mon Dec 29 10:24:30 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339799333
+ack number : 3641148862
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:30 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339799365
+ack number : 3641148862
+window size : 38910
+	 ----------------------------------
+Mon Dec 29 10:24:30 IST 2008
+	 ----------------------------------
+source port no : 22
+destination port no : 40599
+seq number : 3641148862
+ack number : 339799366
+window size : 2003
+	 ----------------------------------
+Mon Dec 29 10:24:30 IST 2008
+	 ----------------------------------
+source port no : 40599
+destination port no : 22
+seq number : 339799366
+ack number : 3641148863
+window size : 38909
+	 ----------------------------------

@@ -8,30 +8,30 @@ void vdrawImage(char* path)
 
    printf("\nDrawing Image testi %d",strlen(path));
 
-   char *pImageExt = path[strlen(path)-3];
+   char *pImageExt = &path[strlen(path)-3];
 
    printf("%s",pImageExt);
 
 }
 
 
-void vconvertImage(const char*path)
+void vconvertImage( char*path)
 {
 
    printf("\nvconertImage");
 
-   char *pImageExt = path[strlen(path)-3];
+   char *pImageExt = &path[strlen(path)-3];
 
    printf("%s",pImageExt);
 
 }
 
-void vsaveImage(const char*path)
+void vsaveImage(char*path)
 {
 
    printf("\n Image");
 
-   char *pImageExt = path[strlen(path)-3];
+   char *pImageExt = &path[strlen(path)-3];
 
    printf("%s",pImageExt);
 

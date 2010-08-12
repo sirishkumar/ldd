@@ -14,7 +14,7 @@ void displaymenu()
 		printf("\n1.Show Image \n2.Convert Image \n3.Save File");
                 scanf("%d",&choice);
 
-                scanf("%s",path);
+             scanf("%s",path);
                switch(choice){
 
                  case 1:
@@ -31,6 +31,12 @@ void displaymenu()
 
 	}
     
+}
+
+
+int _init()
+{
+   printf("\nHello World");
 }
 
 main()
