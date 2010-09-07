@@ -1,0 +1,13 @@
+In this example ( project ) we used two layers
+
+1) UI -- takes care of handling user interface.
+
+2) IML -- image manuplation layer ( takes care of different image types).
+
+our application is designed to handle only one type of files.
+
+When we want to build this application to take care of new images
+we need to replace IML which takes care of new images.
+
+We will enhance this design in next example to take care of multiple
+image formats.

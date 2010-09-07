@@ -1,0 +1,20 @@
+Chapter 05:
+  sem.c
+
+Chapter 12:
+  echo_client.c
+  server.c
+
+Chapter 13:
+  open.c
+  sig_handler.c
+  simple_strace.c
+
+Appendix C:
+  add.c
+  shift.c
+  maskfive.c
+  and.c
+
+Appendix E:
+  test.c

@@ -1,0 +1,1 @@
+cmd_/root/Code-2.6.30/ddex/char/part4/chr_drv_wait_event.ko := ld -r -m elf_i386  --build-id -o /root/Code-2.6.30/ddex/char/part4/chr_drv_wait_event.ko /root/Code-2.6.30/ddex/char/part4/chr_drv_wait_event.o /root/Code-2.6.30/ddex/char/part4/chr_drv_wait_event.mod.o

@@ -1,0 +1,11 @@
+
+Steps to implement and test char drivers
+----------------------------------------------------------
+
+1. create a device node(file)
+
+2. implement the driver operations and register with vfs layer 
+
+3. insert the driver using a kernel module
+
+4. write an application that initiates operations on our driver thru common file api

@@ -1,0 +1,5 @@
+rmmod rcu_writer
+rmmod rcu_reader1
+rmmod rcu_reader2
+rmmod rcu_stack		
+make clean

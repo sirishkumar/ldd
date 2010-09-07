@@ -1,0 +1,1 @@
+cmd_/root/Code-2.6.30/ddex/char/part5/timer.ko := ld -r -m elf_i386  --build-id -o /root/Code-2.6.30/ddex/char/part5/timer.ko /root/Code-2.6.30/ddex/char/part5/timer.o /root/Code-2.6.30/ddex/char/part5/timer.mod.o

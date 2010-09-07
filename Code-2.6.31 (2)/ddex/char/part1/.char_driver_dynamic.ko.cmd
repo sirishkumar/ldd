@@ -1,0 +1,1 @@
+cmd_/root/Code-2.6.30/ddex/char/part1/char_driver_dynamic.ko := ld -r -m elf_i386  --build-id -o /root/Code-2.6.30/ddex/char/part1/char_driver_dynamic.ko /root/Code-2.6.30/ddex/char/part1/char_driver_dynamic.o /root/Code-2.6.30/ddex/char/part1/char_driver_dynamic.mod.o

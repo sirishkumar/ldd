@@ -1,0 +1,1 @@
+cmd_/home/veda/Code-2.6.30/ddex/char/part4/chr_drv_waitexcl.ko := ld -r -m elf_x86_64  --build-id -o /home/veda/Code-2.6.30/ddex/char/part4/chr_drv_waitexcl.ko /home/veda/Code-2.6.30/ddex/char/part4/chr_drv_waitexcl.o /home/veda/Code-2.6.30/ddex/char/part4/chr_drv_waitexcl.mod.o

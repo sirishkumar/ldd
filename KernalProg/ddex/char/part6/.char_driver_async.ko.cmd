@@ -1,0 +1,1 @@
+cmd_/home/veda/Code-2.6.30/ddex/char/part6/char_driver_async.ko := ld -r -m elf_x86_64  --build-id -o /home/veda/Code-2.6.30/ddex/char/part6/char_driver_async.ko /home/veda/Code-2.6.30/ddex/char/part6/char_driver_async.o /home/veda/Code-2.6.30/ddex/char/part6/char_driver_async.mod.o

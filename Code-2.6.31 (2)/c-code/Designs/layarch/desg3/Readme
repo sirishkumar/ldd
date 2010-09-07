@@ -1,0 +1,13 @@
+
+
+
+Same as Design 2 , In this implementataion we used SO to increase
+flexibility in adding new handlers easily to your application.
+
+In this example we used special functions _init and _fini as part of SO
+for registering and unregistering the handlers.
+
+Link the application using -rdynamic flag so that the so's can access the
+functions reg_handler and unreg_handler.
+
+While building so's use -nostdlib and -lc flags.

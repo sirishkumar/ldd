@@ -1,0 +1,1 @@
+cmd_/home/veda/Code-2.6.30/ddex/char/clock/clock.ko := ld -r -m elf_x86_64  --build-id -o /home/veda/Code-2.6.30/ddex/char/clock/clock.ko /home/veda/Code-2.6.30/ddex/char/clock/clock.o /home/veda/Code-2.6.30/ddex/char/clock/clock.mod.o

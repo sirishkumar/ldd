@@ -1,0 +1,6 @@
+- An application can catch SIGABRT but cannot ignore. Handler is only for performaing cleanup tasks
+- SIGKILL can neihter be caught or ignored like SIGTERM or SIGINT
+-SIG_BLOCK	Indicates that the set of signals given by set should be blocked, in addition to the set currently being blocked.
+SIG_UNBLOCK	Indicates that the set of signals given by set should not be blocked. These signals are removed from the current set of signals being blocked.
+SIG_SETMASK	Indicates that the set of signals given by set should replace the old set of signals being blocked.
+-:q

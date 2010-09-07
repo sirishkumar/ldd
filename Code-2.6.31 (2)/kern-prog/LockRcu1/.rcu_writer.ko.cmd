@@ -1,0 +1,1 @@
+cmd_/root/Code-2.6.30/kern-prog/LockRcu1/rcu_writer.ko := ld -r -m elf_i386  --build-id -o /root/Code-2.6.30/kern-prog/LockRcu1/rcu_writer.ko /root/Code-2.6.30/kern-prog/LockRcu1/rcu_writer.o /root/Code-2.6.30/kern-prog/LockRcu1/rcu_writer.mod.o

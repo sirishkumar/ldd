@@ -1,0 +1,1 @@
+cmd_/home/veda/Code-2.6.30/ddex/char/part2/char_driver_udev.ko := ld -r -m elf_x86_64  --build-id -o /home/veda/Code-2.6.30/ddex/char/part2/char_driver_udev.ko /home/veda/Code-2.6.30/ddex/char/part2/char_driver_udev.o /home/veda/Code-2.6.30/ddex/char/part2/char_driver_udev.mod.o

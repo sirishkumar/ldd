@@ -1,0 +1,4 @@
+./libgifhand.so.1
+./libtifhand.so.1
+./libjpghand.so.1
+./libbmphand.so.1

@@ -1,0 +1,684 @@
+aaaaakkkkkakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkor people go to eat rich people food.
+— Dave Yegge
+
+
+This is another one of those blog topics I've been sitting on for way too long, trying to find a polite way of saying something fundamentally impolite. I don't see a way to do it. So: you stand a good chance of being offended by this blog entry. (Hey, just don't say I didn't warn ya.)
+
+I've turned off blog comments, incidentally, because clever evil people have figured out how to beat captchas using non-algorithmic approaches, and I don't have the bandwidth to police spam myself. Sorry.
+
+I don't want to give you a heart attack, so I'm going to give you the gentle-yet-insistent executive summary right up front. If you can make it through my executive summary without a significant increase in heart rate, then you're probably OK. Otherwise, you might consider drinking heavily before reading this, just like people did in the old movies when they needed their leg sawed off. That's what I'm doing, in any case (drinking, that is, not sawing my leg off).
+
+Gentle, yet insistent executive summary: If you don't know how compilers work, then you don't know how computers work. If you're not 100% sure whether you know how compilers work, then you don't know how they work.
+
+You have to know you know, you know.
+
+In fact, Compiler Construction is, in my own humble and probably embarrassingly wrong opinion, the second most important CS class you can take in an undergraduate computer science program.
+
+Because every deep-dive I've attempted on this topic over the past year or so has failed utterly at convincing me after I sobered up, I'm going to stage this production as a, erm, stage production, with N glorious, er, parts, separated by intermissions. So without further ado...
+
+Actually, that sounds like way too much work. So I'll just rant. That's what you paid good money to hear anyway, right? I promise to make so much fun of other people that when I make fun of you, you'll hardly notice.
+
+Cots and Beards
+
+I took compilers in school. Yup. Sure did. From Professor David Notkin at the University of Washington, circa late 1991 or thereabouts.
+
+Guess what grade I got? I got a zero. As in, 0.0. That was my final grade, on my transcript. That's what happens at the University of Washington when you get an Incomplete and don't take the necessary corrective actions (which I've never figured out, by the way.) After some time elapses, it turns into a zero.
+
+You can get an Incomplete in various different legitimate ways, including my way, which was to be an ill-considered beef-witted mooncalf who takes the course past the drop-date and then decides not to finish it because he doesn't feel like it. I earned that Incomplete, I tell you.
+
+I took Compilers again a few years later. I was in college for a long time, because I got hired on as a full-time employee by Geoworks about a year before I graduated (among other reasons), and it wound up extending my graduation for several years.
+
+Don't do that, by the way. It's really hard to finish when you're working full-time. Get your degree, then go to work. All the more so if you're a Ph.D. candidate within any reach of finishing. You don't want to be just another ABD for the rest of your life. Even if you're not sad, per se, we'll be sad for you.
+
+I got a decent grade in Compilers the second time around. I actually understood compilers at a reasonably superficial level the first time, and not too badly the second time. What I failed to grasp for many more years, and I'm telling you this to save you that pain, is why compilers actually matter in the first place.
+
+Here's what I thought when I took it back in 1991. See if it sounds familiar. I thought: a compiler is a tool that takes my program, after whining about it a lot, and turns it into computer-speak. If you want to write programs, then a compiler is just one of those things you need. You need a computer, a keyboard, an account maybe, a compiler, an editor, optionally a debugger, and you're good to go. You know how to Program. You're a Programmer. Now you just need to learn APIs and stuff.
+
+Whenever I gave even a moment's thought to whether I needed to learn compilers, I'd think: I would need to know how compilers work in one of two scenarios. The first scenario is that I go work at Microsoft and somehow wind up in the Visual C++ group. Then I'd need to know how compilers work. The second scenario is that the urge suddenly comes upon me to grow a long beard and stop showering and make a pilgrimage to MIT where I beg Richard Stallman to let me live in a cot in some hallway and work on GCC with him like some sort of Jesuit vagabond.
+
+Both scenarios seemed pretty unlikely to me at the time, although if push came to shove, a cot and beard didn't seem all that bad compared to working at Microsoft.
+
+By the way, my brother Dave was at a party once, long ago, that had more than its fair share of Microsoft people, and apparently there was some windbag there bragging loudly (this is a party, mind you) that he had 15 of the world's best compiler writers working for him in the Visual C++ group. I told Dave: "wow, I didn't realize Richard Stallman worked at Microsoft", and Dave was bummed that he hadn't thought of that particular riposte at the time. So it goes.
+
+The sad part about that story is that I've found myself occasionally wanting to brag that I work with some of the best compiler writers in the world at Google. Please, I beg you: if you ever find me at a party bragging about the compiler writers I work with, have pity on us all and shoot me dead on the spot. Hell, bash me over the head with a lamp if you have to.
+
+Anyway, now you know what I thought of compilers in 1991. Why I even took the class is beyond me. But I didn't finish. And the second time around -- which I only did because I felt bad about the first time around: not from the zero, but from having let David Notkin down -- I only took the time to understand the material well enough to finish the course with a decent grade.
+
+I was by no means atypical. If you're a CS student and you love compilers (which, anecdotally, often means you're in the top 5% of computer science students in your class worldwide), then I salute you. I bet I'm way better at Nethack than you are. The reality is that most programmers are just like I was, and I can't really fault 'em for that.
+
+Before I leave this sordid story forever, I feel obliged to point out that it's partly academia's fault. Except for type systems research, which is being treated with approximately the same scholarly caution and restraint as Arthur's Grail Quest, compilers have been out of favor in academia for a long time. So schools don't do a good job at marketing compilers, and giving them due credit as a critical topic in their own right. It's a sad fact that most schools don't require you to take compilers in order to graduate with a Computer Science degree.
+
+Sigh.
+
+How Would You Solve...
+
+You're a programmer, right? OK, I'll propose some programming situations for you, and you tell me how you'd solve them.
+
+Situation 1: you're doing a bunch of Java programming, and your company has explicit and non-negotiable guidelines as to how to format your Java code, down to every last imaginable detail. How do you configure your editor to auto-format your code according to the style guide?
+
+Situation 2: your company does a lot of Ajax stuff, and your JavaScript code base is growing almost as fast as your other code. You decide to start using jsdoc, a javadoc pseudoclone for JavaScript, to document your functions in a way that permits automated doc extraction. You discover that jsdoc is a miserable sod of a Perl script that seg faults on about 50% of your code base, and -- bear with me here -- you've vowed never to write another line of Perl, because, well, it's Perl. Pick your favorite reason. How do you write your own jsdoc extractor, bearing in mind that it will need to do at least a cursory parse of the JavaScript code itself?
+
+Situation 3: your company has a massive C++ code base, the result of many years of hard work by dozens, if not hundreds, of engineers. You discover that the code needs to be refactored in a nontrivial way, e.g. to upgrade from 32-bit to 64-bit, or to change the way you do your database transactions, or (God help you) because you're upgrading your C++ compiler and the syntax and semantics have all changed again. You're tasked with fixing it. What do you do?
+
+Situation 4: someone at your company writes a bitchin' new web based code review tool. Everyone switches to it. You realize, after using it for a while, that you miss having it syntax-highlight the source code for you. You don't have much time, but you might be able to afford a week or so, part-time, to make it happen. How do you do it? (Let's say your company uses five to eight languages for 99% of their code.)
+
+Situation 5: an unexpected and slightly bizarre new requirement arises on your current project: you need to be able to use a new kind of hardware router. Maybe all your Web 2.0 stuff is screwing up your border routers or network bandwidth monitors, who knows. All you know is the sysops and network engineers are telling you that you need to talk to these new routers directly. The routers have IP addresses, a telnet interface, and a proprietary command language. You send commands, and they send responses. Each command has its own syntax for its arguments, and you need to parse the responses (which have no documented format, but you can reverse-engineer it) to look for certain patterns, in order to set them in the right state for your wacky uploads or downloads. What tool do you use?
+
+Situation 6: your company's projects are starting to slip. The engineers are all smart, and they are all using the latest and greatest state-of-the-art Agile Object-Oriented Software Engineering Principles and programming languages. They are utterly blameless. However, for some reason your code base is getting so complex that project estimates are going wildly awry. Simple tasks seem to take forever. The engineers begin talking about a redesign. This is the Nth such redesign they have gone through in the past five years, but this is going to be the big one that fixes everything. What color slips of paper do you give them? Woah, ahem, sorry, I mean how do you ensure their success this time around?
+
+Situation 7: you have a small, lightweight startup company filled with cool young people with long blue-tinted hair and nose rings and tongue rivets and hip black clothes and iphones and whatever the hell else young people have these days. You use Ruby on Rails for your site, and it scales just fine for your number of visitors. (You've never bothered to measure whether your number of visitors is a function of your site's latency, because it's never occurred to you to wonder.) You read about the latest horrible godawful Rails security vulnerability, under which users can make arbitrary SEC filings on behalf of your company by sending properly formatted GET requests to your public site. You download the new version and read the unit test code to figure out what the actual vulnerability is, since they didn't say, and you determine that you need to make a set of nontrivial code changes to remove a particular (and mysteriously non-greppable) idiom from your code base, replacing it by mechanical transformation to a different idiom. How do you do it?
+
+Situation 8: some drunken blogger presents you with seven weird situations and asks you to speculate about what they have in common. Do you already know the answer?
+
+Here are the answers. What, you thought these were rhetorical?
+
+Scenario #1: you lobby your company to change the style guide to match whatever Eclipse does by default.
+
+Scenario #2: you post to the jsdoc mailing list and ask if anyone else has had this problem. Several people say they have, and the issue pretty much dies right then and there.
+
+Scenario #3: You quit. Duh. You knew that was the answer before you reached the first comma.
+
+Scenario #4: Tough it out. Colors are for weenies. Or maybe you wire up GNU Source Highlight, which covers languages all the way from Fortran to Ada, and you live with the broken highlighting it provides.
+
+Scenario #5: Perl. It's a swiss army knife. You can use it to sidestep this problem with honor, by disemboweling yourself.
+
+Scenario #6: Pink.
+
+Scenario #7: Fix it by hand. Hell, you only have about 10k lines of code for your whole site. It's Rails, fer cryin' out loud. This was a trick question.
+
+Scenario #8: Yes. You skim until the end of the blog, just to find out what the first-most-important CS class is. Stevey's well known for shaggy-dog jokes like this.
+
+And there you have it. You're now equipped to deal with just about every programming situation you could come across. So you obviously don't need to know compilers.
+
+How Compilers Work
+
+Here are some real-life answers from real-life candidates, with real-life Ph.D.s in Computer Science, when asked how compilers work.
+
+Real Candidate #1: "Oh! They, ah, um, scan your program one line at a time and convert each line to assembly language."
+
+Real Candidate #2: "Compilers check errors in your program and, ah, tell you if you had bad syntax. That's all I remember."
+
+Real Candidate #3: "I... <3-minute pause>... I don't know."
+
+Real Candidate #4: "They preprocess your program and convert #DEFINE statements into code, and then, um, emit machine code."
+
+That's pretty much all the detail you'll ever get out of 75% of all interview candidates, because, hey, they don't want to work in a hallway at MIT. Can you blame them?
+
+Only about 3% to 5% of all interview candidates (and that's being optimistic) can tell you any details about how a compiler works. The rest will do some handwaving about lex and yacc and code generation, maybe.
+
+I told you your heart rate would go up. Didn't I?
+
+Take a deep breath.
+
+Why Compilers Matter, Part 1
+
+The first reason Compiler Construction is such an important CS course is that it brings together, in a very concrete way, almost everything you learned before you took the course.
+
+You can't fully understand how compilers work without knowing machine architecture, because compilers emit machine code. It's more than just instructions; compilers need to understand how the underlying machine actually operates in order to translate your source code efficiently.
+
+Incidentally, "machines" are just about anything that can do computations. Perl is a machine. Your OS is a machine. Emacs is a machine. If you could prove your washing machine is Turing complete, then you could write a compiler that executes C code on it.
+
+But you knew that already.
+
+You can't understand how modern compilers work without knowing how Operating Systems work, because no self-respecting machine these days runs without an operating system. The OS interface forms part of the target machine. Sure, you can find people working on five- to ten-year mainframe projects that ultimately run no faster than a PC from Costco, and they may dispense with the operating system due to time constraints, plus the fact that they have a worldwide market of one customer. But for most of us, the OS is part of the machine.
+
+You won't understand how compilers work unless you've taken a theory of computation course. The theory of computation reads like part one of chapter 1 of a compilers book. You need all of it.
+
+You'll have difficulty keeping the phases (and even the inputs and outputs) of a compiler straight in your head unless you've taken a programming languages course. You have to know what the capabilities of programming languages are, or at least have an inkling, before you can write a program that implements them. And unless you know more than one language well, it won't make much sense to write a program in language A that converts language B to language C.
+
+You're actually surrounded by compilation problems. You run into them almost every day. The seven scenarios I outlined above are the tip of the iceberg. (The eighth one is the rest of the iceberg, but no skimming!)
+
+Compilers take a stream of symbols, figure out their structure according to some domain-specific predefined rules, and transform them into another symbol stream.
+
+Sounds pretty general, doesn't it? Well, yeah.
+
+Could an image be considered a symbol stream? Sure. Stream each row of pixels. Each pixel is a number. A number is a symbol. You can transform images with compilers.
+
+Could English be considered a symbol stream? Sure. The rules are pretty damn complex, but yes, natural language processing (at least the deterministic kind that doesn't work and has been supplanted by stochastic methods) can be considered a fancy kind of compilation.
+
+What about ordinary code? I mean, we don't all deal with image processing, or natural language processing. What about the rest of us? We just write code, so do compilers really matter?
+
+Well, do you ever, EVER need to write code that deals with your own code base? What if you need to write a syntax highlighter? What if your programming language adds some new features and your editor doesn't support them yet? Do you just sit around and wait for "someone" to fix your editor? What if it takes years? Doesn't it seem like you, as the perfectly good programmer that you are, ought to be able to fix it faster than that?
+
+Do you ever need to process your code base looking for certain idioms? Do you ever need to write your own doc extractor?
+
+Have you ever worked on code bases that have grown inexplicably huge, despite all your best efforts to make them modular and object-oriented? Of course you have. What's the solution?
+
+You either learn compilers and start writing your own DSLs, or your get yourself a better language.
+
+I recommend NBL, by the way. It's my personal favorite: the local maximum in a tensor-field of evil, the highest ground in the vicinity of Hell itself. I'm not going to tell you what NBL is, yet, though. Patience! I'm only half done with my Emacs-mode for it.
+
+If you don't take compilers...
+
+One reason many programmers don't take compilers is that they've heard it's really, really hard. It's often the "capstone" course of a CS program (OS often being the other one), which means it's a sort of "optional rite of passage" that makes you a Real Programmer and puts hair on your chest, regardless of gender or chest-hair preference.
+
+If you're trying to plan out a schedule that gets you to graduation before the money runs out, and hopefully with a GPA that doesn't cause prospective employers to summon the guard dogs on you, then when you hear the phrase "optional rite of passage", who can blame you if you look for alternatives?
+
+I'm not saying other CS courses aren't important, incidentally. Operating Systems, Machine Learning, Distributed Computing and Algorithm Design are all arguably just as important as Compiler Construction. Except that you can take them all and still not know how computers work, which to me means that Compilers really needs to be a mandatory 300-level course. But it has so many prerequisites that you can't realistically make that happen at most schools.
+
+Designing an effective undergrad CS degree is hard. It's no wonder so many ivy-league schools have more or less given up and turned into Java Certification shops.
+
+If you're a conscientious CS student, you'll at least take OS and AI. You may come out without knowing exactly how compilers work, which is unfortunate, but there will be many problem domains in which you can deliver at least as much value as all the other people just like you. That's something to feel good about, or at least as good as everyone else feels at any rate.
+
+Go team.
+
+Most programmers these days, sadly, just want the degree. They don't care what they learn. They want a degree so they can get a job so they can pay the bills.
+
+Most programmers gravitate towards a set of courses that can best be described as the olive-garden of computer science: the places where dumb programmers go to learn smart programmer stuff.
+
+I hesitate to name these courses explicitly. I wouldn't be agile enough to dodge the game of graphic bloodshed aimed at me by animated, project-managing, object-oriented engineers using Java and Web 2.0 technologies to roast me via user interfaces designed rationally through teamwork and modern software methodologies. I'd become a case study in the ethics of software and its impact on our culture.
+
+But you can probably imagine what some of the courses are.
+
+If you don't take compilers then you run the risk of forever being on the programmer B-list: the kind of eager young architect who becomes a saturnine old architect who spends a career building large systems and being damned proud of it.
+
+Large Systems Suck
+
+This rule is 100% transitive. If you build one, you suck.
+
+Compiler Camps
+
+It turns out that many compiler "experts" don't know compilers all that well, because compilers can logically be thought of as three separate phases -- so separate, in fact, that they constitute entirely different and mostly non-overlapping research domains.
+
+The first big phase of the compilation pipeline is parsing. You need to take your input and turn it into a tree. So you go through preprocessing, lexical analysis (aka tokenization), and then syntax analysis and IR generation. Lexical analysis is usually done with regexps. Syntax analysis is usually done with grammars. You can use recursive descent (most common), or a parser generator (common for smaller languages), or with fancier algorithms that are correspondingly slower to execute. But the output of this pipeline stage is usually a parse tree of some sort.
+
+You can get a hell of a lot farther as a professional programmer just by knowing that much. Even if you have no idea how the rest of the compilation works, you can make practical use of tools or algorithms that produce a parse tree. In fact, parsing alone can help you solve Situations #1 through #4 above.
+
+If you don't know how parsing works, you'll do it badly with regular expressions, or if you don't know those, then with hand-rolled state machines that are thousands of lines of incomprehensible code that doesn't actually work.
+
+Really.
+
+In fact I used to ask candidates, as a standard interview question, how they'd find phone numbers in a tree of HTML files, and many of them (up to 30%) chose to write 2500-line C++ programs as their answer.
+
+At some point, candidates started telling me they'd read that one in my blog, which was pretty weird, all things considered. Now I don't ask it anymore.
+
+I ask variants of it occasionally, and it still gets them: you either recognize it as an easy problem or you get out the swiss army knife and start looking for a second to behead you before the pain causes you to dishonor your family.
+
+C++ does that surprisingly often.
+
+The next big phase is Type Checking. This is a group of zealous academics (and their groupies and/or grad students) who believe that they can write programs that are smart enough to figure out what your program is trying to do, and tell you when you're wrong. They don't think of themselves as AI people, though, oddly enough, because AI has (wisely) moved beyond deterministic approaches.
+
+This camp has figured out more or less the practical limit of what they can check deterministically, and they have declared that this is the boundary of computation itself, beyond the borders of which you are crossing the outskirts of civilization into kill-or-be-killed territory, also occasionally known as The Awful Place Where People Make Money With Software.
+
+You should hear them when they're drunk at rave parties.
+
+A good friend of mine with a Ph.D. in languages told me recently that it's "very painful" to experience the realization that all those years of slaving over beautiful mathematical purity have more or less zero bearing on the real world.
+
+The problem -- well, one problem -- is the underlying premise, which is apparently that without the Hindley-Milner type system, or failing that, some crap-ass type system like Java's, you will never be able to write working code; it'll collapse under its own weight: a vast, typeless trap for the unwary adventurer.
+
+They don't get out much, apparently.
+
+Another problem is that they believe any type "error", no matter how insignificant it might be to the operation of your personal program at this particular moment, should be treated as a news item worthy of the Wall Street Journal front page. Everyone should throw down their ploughshares and stop working until it's fixed. The concept of a type "warning" never enters the discussion.
+
+Remember when fuzzy logic came along? Oh, oh, wait -- remember when von Neumann and Stan Ulam introduced the Monte Carlo method? Oh, right, I keep forgetting: you were born in nineteen-ninety something, and you're nineteen, and I'm ninety-something.
+
+Well, someday they will realize that strict determinism has always, always failed, in every dimensionality-cursed domain to which it's ever been applied, and it's always replaced by probablistic methods.
+
+Call it "optional static types", as an embryonic version of the glorious future. NBL, anyone?
+
+The third camp, who tends to be the most isolated, is the code generation camp. Code generation is pretty straightforward, assuming you know enough recursion to realize your grandparents weren't Adam and Eve. So I'm really talking about Optimization, which is the art of generating code that is just barely correct enough that most of your customers won't notice problems. Wait, sorry, that's Amazonization. Optimization is the art of producing correct code that is equivalent to the naive, expensive code written by your presumably naive, expensive programmers.
+
+I'd call compiler optimization an endless chasm of eternal darkness, except that it's pretty fun. So it's an endless chasm of fun eternal darkness, I guess. But you can take it to extremes you'd never guess were possible, and it's a fertile, open research field, and when they "finish", they'll be in the same place the Type Checking camp wants to be, namely AI experts.
+
+By which I mean Machine Learning, since the term "AI" smacks of not just determinism, but also a distinct lack of VC funding.
+
+In any case, the three camps don't really mingle much, and all of them have a valid claim at calling themselves "compiler experts" at raves.
+
+The Dark Side of Compilers
+
+One of the reasons it took me so long to write this ridiculous blog entry is that I wanted to go write a compiler for myself before I spouted off about them.
+
+Done!
+
+Well, sort of. Actually, "not done" would be more accurate, since that, as I've found, is the steady state for compilers everywhere.
+
+Without giving any details away, as that would be premature, I took a stab at writing an interpreter for a useful language, using another useful language, with the output being useful bytecode for a useful platform.
+
+It was fun. It went pretty fast. I learned a lot, even though I'd taken compilers twice in school 15 years ago, and even though I've gradually taught myself about compilers and programming languages over the past 5 years or so.
+
+I still learned a lot just by doing it.
+
+Unfortunately, writing a compiler creates a living thing. I didn't realize this going into it. I wasn't asking for a baby. It was a complete surprise to me, after 20-odd years of industry experience, that even writing a simple interpreter would produce a lifetime of work.
+
+Go figure.
+
+I credit the phrase "a lifetime of work" to Bob Jervis, a friend of mine who happens to be the original author of Turbo C (with which I myself learned to program), and a damn good, even world-class compiler writer.
+
+He gave a tech talk recently (Google does that a LOT) in which he pointed out that even just the set of features the audience had asked for was a lifetime of work.
+
+This phrasing resonated deeply with me. It was similar to my realization about 18 months back that I only have a small finite number of 5-year projects left, and I have to start choosing them very carefully. After writing my own "production interpreter", I realized that the work remaining was unbounded.
+
+I mean it. Unbounded.
+
+So from one perspective, I suppose I should just release what I've got and start marketing it, so other people will jump on board and start helping out. On the other hand, I started this particular side-project not to create a lifetime of work for myself (far from it), but to make sure I knew enough about compilers to be able to rant semi-intelligently about them, after a few glasses of wine, to a quarter million readers.
+
+So I'd at least better finish the byte compiler first.
+
+I'll get there. It'll be neat. I've only described this crazy little side project to a handful of people, and they reacted pretty uniformly by yelling "WTF????" You know, the kind of shout you'd yell out if you discovered the most sane person you knew in the entire world trying to stuff a lit stick of dynamite into their mouth.
+
+That's compilers for ya. You can hardly attempt one without trying to change the world in the process.
+
+That's why you need to learn how they work. That's why you, yes you personally, need to write one.
+
+It's not as hard as you think, except for the fact that it will turn into a lifetime of work. It's OK. You can walk away from it, if you want to. You probably won't want to. You may be forced to, due to time constraints, but you'll still be a far better programmer for the effort.
+
+You'll be able to fix that dang syntax highlighting.
+
+You'll be able to write that doc extractor.
+
+You'll be able to fix the broken indentation in Eclipse.
+
+You won't have to wait for your tools to catch up.
+
+You might even stop bragging about how smart your tools are, how amazing it is that they can understand your code -- which, if I may say so, isn't something I'd go broadcasting quite so loudly, but maybe it's just me.
+
+You'll be able to jump in and help fix all those problems with your favorite language. Don't even try to tell me your favorite language doesn't have problems.
+
+You'll be able to vote with confidence against the tired majority when some of the smartest people in the world (like, oh, say, James Gosling and Guy Steele) try to introduce non-broken closures and real extensibility to the Java community. Those poor Java Community schmucks. I pity them all. Really I do.
+
+Heck, you might even start eating rich programmer food. Writing compilers is only the beginning; I never claimed it was the end of the road. You'll finally be able to move past your little service APIs and JavaScript widgets, and start helping to write the program that cures cancer, or all viruses worldwide, or old age and dying. Or even (I'm really going out on a limb here) the delusion of Static Typing as a deterministic panacea.
+
+If nothing else, you'll finally really learn whatever programming language you're writing a compiler for. There's no other way. Sorry!
+
+And with that, I suppose I should wrap up. I'm heading to Foo Camp in the morning, and I have no idea what to expect, but I have a pretty good guess that there won't be much discussion of compilers, except hopefully from GVR vis a vis Python 3000. That might be cool.
+
+If you don't know compilers, don't sweat it. I still think you're a good programmer. But it's good to have stretch goals!
+
+But What's The Most Important CS Course?
+
+Typing 101. Duh.
+
+Hie thee hence.
+POSTED BY STEVE YEGGE AT 11:51 PM 
+Newer Post Older Post Home
+
+QUICK LINKER
+
+BLOG ARCHIVE
+
+►  2010 (2)
+►  2009 (3)
+►  2008 (19)
+▼  2007 (12)
+►  December (2)
+►  September (2)
+►  August (1)
+▼  June (3)
+Rhino on Rails
+Rich Programmer Food
+That Old Marshmallow Maze Spell
+►  February (3)
+►  January (1)
+►  2006 (22)
+FEEDS
+
+Atom
+FeedBurner
+SOME FAVORITE LANGUAGES
+
+Ruby
+D language
+Jython
+Common Lisp
+Scheme
+JRuby
+Haskell
+Objective Caml
+MY SITES
+
+Stevey's Drunken Blog RantsTM
+Wyvern (my game)
+Stevey's Personal Blog
+ABOUT ME
+
+
+STEVE YEGGE
+VIEW MY COMPLETE PROFILE
+ 
+
+STEVEY'S BLOG RANTS
+RANDOM WHINING AND STUFF.
+
+THURSDAY, JUNE 21, 2007
+
+Rich Programmer Food
+
+
+The Olive Garden: it's where poor people go to eat rich people food.
+— Dave Yegge
+
+
+This is another one of those blog topics I've been sitting on for way too long, trying to find a polite way of saying something fundamentally impolite. I don't see a way to do it. So: you stand a good chance of being offended by this blog entry. (Hey, just don't say I didn't warn ya.)
+
+I've turned off blog comments, incidentally, because clever evil people have figured out how to beat captchas using non-algorithmic approaches, and I don't have the bandwidth to police spam myself. Sorry.
+
+I don't want to give you a heart attack, so I'm going to give you the gentle-yet-insistent executive summary right up front. If you can make it through my executive summary without a significant increase in heart rate, then you're probably OK. Otherwise, you might consider drinking heavily before reading this, just like people did in the old movies when they needed their leg sawed off. That's what I'm doing, in any case (drinking, that is, not sawing my leg off).
+
+Gentle, yet insistent executive summary: If you don't know how compilers work, then you don't know how computers work. If you're not 100% sure whether you know how compilers work, then you don't know how they work.
+
+You have to know you know, you know.
+
+In fact, Compiler Construction is, in my own humble and probably embarrassingly wrong opinion, the second most important CS class you can take in an undergraduate computer science program.
+
+Because every deep-dive I've attempted on this topic over the past year or so has failed utterly at convincing me after I sobered up, I'm going to stage this production as a, erm, stage production, with N glorious, er, parts, separated by intermissions. So without further ado...
+
+Actually, that sounds like way too much work. So I'll just rant. That's what you paid good money to hear anyway, right? I promise to make so much fun of other people that when I make fun of you, you'll hardly notice.
+
+Cots and Beards
+
+I took compilers in school. Yup. Sure did. From Professor David Notkin at the University of Washington, circa late 1991 or thereabouts.
+
+Guess what grade I got? I got a zero. As in, 0.0. That was my final grade, on my transcript. That's what happens at the University of Washington when you get an Incomplete and don't take the necessary corrective actions (which I've never figured out, by the way.) After some time elapses, it turns into a zero.
+
+You can get an Incomplete in various different legitimate ways, including my way, which was to be an ill-considered beef-witted mooncalf who takes the course past the drop-date and then decides not to finish it because he doesn't feel like it. I earned that Incomplete, I tell you.
+
+I took Compilers again a few years later. I was in college for a long time, because I got hired on as a full-time employee by Geoworks about a year before I graduated (among other reasons), and it wound up extending my graduation for several years.
+
+Don't do that, by the way. It's really hard to finish when you're working full-time. Get your degree, then go to work. All the more so if you're a Ph.D. candidate within any reach of finishing. You don't want to be just another ABD for the rest of your life. Even if you're not sad, per se, we'll be sad for you.
+
+I got a decent grade in Compilers the second time around. I actually understood compilers at a reasonably superficial level the first time, and not too badly the second time. What I failed to grasp for many more years, and I'm telling you this to save you that pain, is why compilers actually matter in the first place.
+
+Here's what I thought when I took it back in 1991. See if it sounds familiar. I thought: a compiler is a tool that takes my program, after whining about it a lot, and turns it into computer-speak. If you want to write programs, then a compiler is just one of those things you need. You need a computer, a keyboard, an account maybe, a compiler, an editor, optionally a debugger, and you're good to go. You know how to Program. You're a Programmer. Now you just need to learn APIs and stuff.
+
+Whenever I gave even a moment's thought to whether I needed to learn compilers, I'd think: I would need to know how compilers work in one of two scenarios. The first scenario is that I go work at Microsoft and somehow wind up in the Visual C++ group. Then I'd need to know how compilers work. The second scenario is that the urge suddenly comes upon me to grow a long beard and stop showering and make a pilgrimage to MIT where I beg Richard Stallman to let me live in a cot in some hallway and work on GCC with him like some sort of Jesuit vagabond.
+
+Both scenarios seemed pretty unlikely to me at the time, although if push came to shove, a cot and beard didn't seem all that bad compared to working at Microsoft.
+
+By the way, my brother Dave was at a party once, long ago, that had more than its fair share of Microsoft people, and apparently there was some windbag there bragging loudly (this is a party, mind you) that he had 15 of the world's best compiler writers working for him in the Visual C++ group. I told Dave: "wow, I didn't realize Richard Stallman worked at Microsoft", and Dave was bummed that he hadn't thought of that particular riposte at the time. So it goes.
+
+The sad part about that story is that I've found myself occasionally wanting to brag that I work with some of the best compiler writers in the world at Google. Please, I beg you: if you ever find me at a party bragging about the compiler writers I work with, have pity on us all and shoot me dead on the spot. Hell, bash me over the head with a lamp if you have to.
+
+Anyway, now you know what I thought of compilers in 1991. Why I even took the class is beyond me. But I didn't finish. And the second time around -- which I only did because I felt bad about the first time around: not from the zero, but from having let David Notkin down -- I only took the time to understand the material well enough to finish the course with a decent grade.
+
+I was by no means atypical. If you're a CS student and you love compilers (which, anecdotally, often means you're in the top 5% of computer science students in your class worldwide), then I salute you. I bet I'm way better at Nethack than you are. The reality is that most programmers are just like I was, and I can't really fault 'em for that.
+
+Before I leave this sordid story forever, I feel obliged to point out that it's partly academia's fault. Except for type systems research, which is being treated with approximately the same scholarly caution and restraint as Arthur's Grail Quest, compilers have been out of favor in academia for a long time. So schools don't do a good job at marketing compilers, and giving them due credit as a critical topic in their own right. It's a sad fact that most schools don't require you to take compilers in order to graduate with a Computer Science degree.
+
+Sigh.
+
+How Would You Solve...
+
+You're a programmer, right? OK, I'll propose some programming situations for you, and you tell me how you'd solve them.
+
+Situation 1: you're doing a bunch of Java programming, and your company has explicit and non-negotiable guidelines as to how to format your Java code, down to every last imaginable detail. How do you configure your editor to auto-format your code according to the style guide?
+
+Situation 2: your company does a lot of Ajax stuff, and your JavaScript code base is growing almost as fast as your other code. You decide to start using jsdoc, a javadoc pseudoclone for JavaScript, to document your functions in a way that permits automated doc extraction. You discover that jsdoc is a miserable sod of a Perl script that seg faults on about 50% of your code base, and -- bear with me here -- you've vowed never to write another line of Perl, because, well, it's Perl. Pick your favorite reason. How do you write your own jsdoc extractor, bearing in mind that it will need to do at least a cursory parse of the JavaScript code itself?
+
+Situation 3: your company has a massive C++ code base, the result of many years of hard work by dozens, if not hundreds, of engineers. You discover that the code needs to be refactored in a nontrivial way, e.g. to upgrade from 32-bit to 64-bit, or to change the way you do your database transactions, or (God help you) because you're upgrading your C++ compiler and the syntax and semantics have all changed again. You're tasked with fixing it. What do you do?
+
+Situation 4: someone at your company writes a bitchin' new web based code review tool. Everyone switches to it. You realize, after using it for a while, that you miss having it syntax-highlight the source code for you. You don't have much time, but you might be able to afford a week or so, part-time, to make it happen. How do you do it? (Let's say your company uses five to eight languages for 99% of their code.)
+
+Situation 5: an unexpected and slightly bizarre new requirement arises on your current project: you need to be able to use a new kind of hardware router. Maybe all your Web 2.0 stuff is screwing up your border routers or network bandwidth monitors, who knows. All you know is the sysops and network engineers are telling you that you need to talk to these new routers directly. The routers have IP addresses, a telnet interface, and a proprietary command language. You send commands, and they send responses. Each command has its own syntax for its arguments, and you need to parse the responses (which have no documented format, but you can reverse-engineer it) to look for certain patterns, in order to set them in the right state for your wacky uploads or downloads. What tool do you use?
+
+Situation 6: your company's projects are starting to slip. The engineers are all smart, and they are all using the latest and greatest state-of-the-art Agile Object-Oriented Software Engineering Principles and programming languages. They are utterly blameless. However, for some reason your code base is getting so complex that project estimates are going wildly awry. Simple tasks seem to take forever. The engineers begin talking about a redesign. This is the Nth such redesign they have gone through in the past five years, but this is going to be the big one that fixes everything. What color slips of paper do you give them? Woah, ahem, sorry, I mean how do you ensure their success this time around?
+
+Situation 7: you have a small, lightweight startup company filled with cool young people with long blue-tinted hair and nose rings and tongue rivets and hip black clothes and iphones and whatever the hell else young people have these days. You use Ruby on Rails for your site, and it scales just fine for your number of visitors. (You've never bothered to measure whether your number of visitors is a function of your site's latency, because it's never occurred to you to wonder.) You read about the latest horrible godawful Rails security vulnerability, under which users can make arbitrary SEC filings on behalf of your company by sending properly formatted GET requests to your public site. You download the new version and read the unit test code to figure out what the actual vulnerability is, since they didn't say, and you determine that you need to make a set of nontrivial code changes to remove a particular (and mysteriously non-greppable) idiom from your code base, replacing it by mechanical transformation to a different idiom. How do you do it?
+
+Situation 8: some drunken blogger presents you with seven weird situations and asks you to speculate about what they have in common. Do you already know the answer?
+
+Here are the answers. What, you thought these were rhetorical?
+
+Scenario #1: you lobby your company to change the style guide to match whatever Eclipse does by default.
+
+Scenario #2: you post to the jsdoc mailing list and ask if anyone else has had this problem. Several people say they have, and the issue pretty much dies right then and there.
+
+Scenario #3: You quit. Duh. You knew that was the answer before you reached the first comma.
+
+Scenario #4: Tough it out. Colors are for weenies. Or maybe you wire up GNU Source Highlight, which covers languages all the way from Fortran to Ada, and you live with the broken highlighting it provides.
+
+Scenario #5: Perl. It's a swiss army knife. You can use it to sidestep this problem with honor, by disemboweling yourself.
+
+Scenario #6: Pink.
+
+Scenario #7: Fix it by hand. Hell, you only have about 10k lines of code for your whole site. It's Rails, fer cryin' out loud. This was a trick question.
+
+Scenario #8: Yes. You skim until the end of the blog, just to find out what the first-most-important CS class is. Stevey's well known for shaggy-dog jokes like this.
+
+And there you have it. You're now equipped to deal with just about every programming situation you could come across. So you obviously don't need to know compilers.
+
+How Compilers Work
+
+Here are some real-life answers from real-life candidates, with real-life Ph.D.s in Computer Science, when asked how compilers work.
+
+Real Candidate #1: "Oh! They, ah, um, scan your program one line at a time and convert each line to assembly language."
+
+Real Candidate #2: "Compilers check errors in your program and, ah, tell you if you had bad syntax. That's all I remember."
+
+Real Candidate #3: "I... <3-minute pause>... I don't know."
+
+Real Candidate #4: "They preprocess your program and convert #DEFINE statements into code, and then, um, emit machine code."
+
+That's pretty much all the detail you'll ever get out of 75% of all interview candidates, because, hey, they don't want to work in a hallway at MIT. Can you blame them?
+
+Only about 3% to 5% of all interview candidates (and that's being optimistic) can tell you any details about how a compiler works. The rest will do some handwaving about lex and yacc and code generation, maybe.
+
+I told you your heart rate would go up. Didn't I?
+
+Take a deep breath.
+
+Why Compilers Matter, Part 1
+
+The first reason Compiler Construction is such an important CS course is that it brings together, in a very concrete way, almost everything you learned before you took the course.
+
+You can't fully understand how compilers work without knowing machine architecture, because compilers emit machine code. It's more than just instructions; compilers need to understand how the underlying machine actually operates in order to translate your source code efficiently.
+
+Incidentally, "machines" are just about anything that can do computations. Perl is a machine. Your OS is a machine. Emacs is a machine. If you could prove your washing machine is Turing complete, then you could write a compiler that executes C code on it.
+
+But you knew that already.
+
+You can't understand how modern compilers work without knowing how Operating Systems work, because no self-respecting machine these days runs without an operating system. The OS interface forms part of the target machine. Sure, you can find people working on five- to ten-year mainframe projects that ultimately run no faster than a PC from Costco, and they may dispense with the operating system due to time constraints, plus the fact that they have a worldwide market of one customer. But for most of us, the OS is part of the machine.
+
+You won't understand how compilers work unless you've taken a theory of computation course. The theory of computation reads like part one of chapter 1 of a compilers book. You need all of it.
+
+You'll have difficulty keeping the phases (and even the inputs and outputs) of a compiler straight in your head unless you've taken a programming languages course. You have to know what the capabilities of programming languages are, or at least have an inkling, before you can write a program that implements them. And unless you know more than one language well, it won't make much sense to write a program in language A that converts language B to language C.
+
+You're actually surrounded by compilation problems. You run into them almost every day. The seven scenarios I outlined above are the tip of the iceberg. (The eighth one is the rest of the iceberg, but no skimming!)
+
+Compilers take a stream of symbols, figure out their structure according to some domain-specific predefined rules, and transform them into another symbol stream.
+
+Sounds pretty general, doesn't it? Well, yeah.
+
+Could an image be considered a symbol stream? Sure. Stream each row of pixels. Each pixel is a number. A number is a symbol. You can transform images with compilers.
+
+Could English be considered a symbol stream? Sure. The rules are pretty damn complex, but yes, natural language processing (at least the deterministic kind that doesn't work and has been supplanted by stochastic methods) can be considered a fancy kind of compilation.
+
+What about ordinary code? I mean, we don't all deal with image processing, or natural language processing. What about the rest of us? We just write code, so do compilers really matter?
+
+Well, do you ever, EVER need to write code that deals with your own code base? What if you need to write a syntax highlighter? What if your programming language adds some new features and your editor doesn't support them yet? Do you just sit around and wait for "someone" to fix your editor? What if it takes years? Doesn't it seem like you, as the perfectly good programmer that you are, ought to be able to fix it faster than that?
+
+Do you ever need to process your code base looking for certain idioms? Do you ever need to write your own doc extractor?
+
+Have you ever worked on code bases that have grown inexplicably huge, despite all your best efforts to make them modular and object-oriented? Of course you have. What's the solution?
+
+You either learn compilers and start writing your own DSLs, or your get yourself a better language.
+
+I recommend NBL, by the way. It's my personal favorite: the local maximum in a tensor-field of evil, the highest ground in the vicinity of Hell itself. I'm not going to tell you what NBL is, yet, though. Patience! I'm only half done with my Emacs-mode for it.
+
+If you don't take compilers...
+
+One reason many programmers don't take compilers is that they've heard it's really, really hard. It's often the "capstone" course of a CS program (OS often being the other one), which means it's a sort of "optional rite of passage" that makes you a Real Programmer and puts hair on your chest, regardless of gender or chest-hair preference.
+
+If you're trying to plan out a schedule that gets you to graduation before the money runs out, and hopefully with a GPA that doesn't cause prospective employers to summon the guard dogs on you, then when you hear the phrase "optional rite of passage", who can blame you if you look for alternatives?
+
+I'm not saying other CS courses aren't important, incidentally. Operating Systems, Machine Learning, Distributed Computing and Algorithm Design are all arguably just as important as Compiler Construction. Except that you can take them all and still not know how computers work, which to me means that Compilers really needs to be a mandatory 300-level course. But it has so many prerequisites that you can't realistically make that happen at most schools.
+
+Designing an effective undergrad CS degree is hard. It's no wonder so many ivy-league schools have more or less given up and turned into Java Certification shops.
+
+If you're a conscientious CS student, you'll at least take OS and AI. You may come out without knowing exactly how compilers work, which is unfortunate, but there will be many problem domains in which you can deliver at least as much value as all the other people just like you. That's something to feel good about, or at least as good as everyone else feels at any rate.
+
+Go team.
+
+Most programmers these days, sadly, just want the degree. They don't care what they learn. They want a degree so they can get a job so they can pay the bills.
+
+Most programmers gravitate towards a set of courses that can best be described as the olive-garden of computer science: the places where dumb programmers go to learn smart programmer stuff.
+
+I hesitate to name these courses explicitly. I wouldn't be agile enough to dodge the game of graphic bloodshed aimed at me by animated, project-managing, object-oriented engineers using Java and Web 2.0 technologies to roast me via user interfaces designed rationally through teamwork and modern software methodologies. I'd become a case study in the ethics of software and its impact on our culture.
+
+But you can probably imagine what some of the courses are.
+
+If you don't take compilers then you run the risk of forever being on the programmer B-list: the kind of eager young architect who becomes a saturnine old architect who spends a career building large systems and being damned proud of it.
+
+Large Systems Suck
+
+This rule is 100% transitive. If you build one, you suck.
+
+Compiler Camps
+
+It turns out that many compiler "experts" don't know compilers all that well, because compilers can logically be thought of as three separate phases -- so separate, in fact, that they constitute entirely different and mostly non-overlapping research domains.
+
+The first big phase of the compilation pipeline is parsing. You need to take your input and turn it into a tree. So you go through preprocessing, lexical analysis (aka tokenization), and then syntax analysis and IR generation. Lexical analysis is usually done with regexps. Syntax analysis is usually done with grammars. You can use recursive descent (most common), or a parser generator (common for smaller languages), or with fancier algorithms that are correspondingly slower to execute. But the output of this pipeline stage is usually a parse tree of some sort.
+
+You can get a hell of a lot farther as a professional programmer just by knowing that much. Even if you have no idea how the rest of the compilation works, you can make practical use of tools or algorithms that produce a parse tree. In fact, parsing alone can help you solve Situations #1 through #4 above.
+
+If you don't know how parsing works, you'll do it badly with regular expressions, or if you don't know those, then with hand-rolled state machines that are thousands of lines of incomprehensible code that doesn't actually work.
+
+Really.
+
+In fact I used to ask candidates, as a standard interview question, how they'd find phone numbers in a tree of HTML files, and many of them (up to 30%) chose to write 2500-line C++ programs as their answer.
+
+At some point, candidates started telling me they'd read that one in my blog, which was pretty weird, all things considered. Now I don't ask it anymore.
+
+I ask variants of it occasionally, and it still gets them: you either recognize it as an easy problem or you get out the swiss army knife and start looking for a second to behead you before the pain causes you to dishonor your family.
+
+C++ does that surprisingly often.
+
+The next big phase is Type Checking. This is a group of zealous academics (and their groupies and/or grad students) who believe that they can write programs that are smart enough to figure out what your program is trying to do, and tell you when you're wrong. They don't think of themselves as AI people, though, oddly enough, because AI has (wisely) moved beyond deterministic approaches.
+
+This camp has figured out more or less the practical limit of what they can check deterministically, and they have declared that this is the boundary of computation itself, beyond the borders of which you are crossing the outskirts of civilization into kill-or-be-killed territory, also occasionally known as The Awful Place Where People Make Money With Software.
+
+You should hear them when they're drunk at rave parties.
+
+A good friend of mine with a Ph.D. in languages told me recently that it's "very painful" to experience the realization that all those years of slaving over beautiful mathematical purity have more or less zero bearing on the real world.
+
+The problem -- well, one problem -- is the underlying premise, which is apparently that without the Hindley-Milner type system, or failing that, some crap-ass type system like Java's, you will never be able to write working code; it'll collapse under its own weight: a vast, typeless trap for the unwary adventurer.
+
+They don't get out much, apparently.
+
+Another problem is that they believe any type "error", no matter how insignificant it might be to the operation of your personal program at this particular moment, should be treated as a news item worthy of the Wall Street Journal front page. Everyone should throw down their ploughshares and stop working until it's fixed. The concept of a type "warning" never enters the discussion.
+
+Remember when fuzzy logic came along? Oh, oh, wait -- remember when von Neumann and Stan Ulam introduced the Monte Carlo method? Oh, right, I keep forgetting: you were born in nineteen-ninety something, and you're nineteen, and I'm ninety-something.
+
+Well, someday they will realize that strict determinism has always, always failed, in every dimensionality-cursed domain to which it's ever been applied, and it's always replaced by probablistic methods.
+
+Call it "optional static types", as an embryonic version of the glorious future. NBL, anyone?
+
+The third camp, who tends to be the most isolated, is the code generation camp. Code generation is pretty straightforward, assuming you know enough recursion to realize your grandparents weren't Adam and Eve. So I'm really talking about Optimization, which is the art of generating code that is just barely correct enough that most of your customers won't notice problems. Wait, sorry, that's Amazonization. Optimization is the art of producing correct code that is equivalent to the naive, expensive code written by your presumably naive, expensive programmers.
+
+I'd call compiler optimization an endless chasm of eternal darkness, except that it's pretty fun. So it's an endless chasm of fun eternal darkness, I guess. But you can take it to extremes you'd never guess were possible, and it's a fertile, open research field, and when they "finish", they'll be in the same place the Type Checking camp wants to be, namely AI experts.
+
+By which I mean Machine Learning, since the term "AI" smacks of not just determinism, but also a distinct lack of VC funding.
+
+In any case, the three camps don't really mingle much, and all of them have a valid claim at calling themselves "compiler experts" at raves.
+
+The Dark Side of Compilers
+
+One of the reasons it took me so long to write this ridiculous blog entry is that I wanted to go write a compiler for myself before I spouted off about them.
+
+Done!
+
+Well, sort of. Actually, "not done" would be more accurate, since that, as I've found, is the steady state for compilers everywhere.
+
+Without giving any details away, as that would be premature, I took a stab at writing an interpreter for a useful language, using another useful language, with the output being useful bytecode for a useful platform.
+
+It was fun. It went pretty fast. I learned a lot, even though I'd taken compilers twice in school 15 years ago, and even though I've gradually taught myself about compilers and programming languages over the past 5 years or so.
+
+I still learned a lot just by doing it.
+
+Unfortunately, writing a compiler creates a living thing. I didn't realize this going into it. I wasn't asking for a baby. It was a complete surprise to me, after 20-odd years of industry experience, that even writing a simple interpreter would produce a lifetime of work.
+
+Go figure.
+
+I credit the phrase "a lifetime of work" to Bob Jervis, a friend of mine who happens to be the original author of Turbo C (with which I myself learned to program), and a damn good, even world-class compiler writer.
+
+He gave a tech talk recently (Google does that a LOT) in which he pointed out that even just the set of features the audience had asked for was a lifetime of work.
+
+This phrasing resonated deeply with me. It was similar to my realization about 18 months back that I only have a small finite number of 5-year projects left, and I have to start choosing them very carefully. After writing my own "production interpreter", I realized that the work remaining was unbounded.
+
+I mean it. Unbounded.
+
+So from one perspective, I suppose I should just release what I've got and start marketing it, so other people will jump on board and start helping out. On the other hand, I started this particular side-project not to create a lifetime of work for myself (far from it), but to make sure I knew enough about compilers to be able to rant semi-intelligently about them, after a few glasses of wine, to a quarter million readers.
+
+So I'd at least better finish the byte compiler first.
+
+I'll get there. It'll be neat. I've only described this crazy little side project to a handful of people, and they reacted pretty uniformly by yelling "WTF????" You know, the kind of shout you'd yell out if you discovered the most sane person you knew in the entire world trying to stuff a lit stick of dynamite into their mouth.
+
+That's compilers for ya. You can hardly attempt one without trying to change the world in the process.
+
+That's why you need to learn how they work. That's why you, yes you personally, need to write one.
+
+It's not as hard as you think, except for the fact that it will turn into a lifetime of work. It's OK. You can walk away from it, if you want to. You probably won't want to. You may be forced to, due to time constraints, but you'll still be a far better programmer for the effort.
+
+You'll be able to fix that dang syntax highlighting.
+
+You'll be able to write that doc extractor.
+
+You'll be able to fix the broken indentation in Eclipse.
+
+You won't have to wait for your tools to catch up.
+
+You might even stop bragging about how smart your tools are, how amazing it is that they can understand your code -- which, if I may say so, isn't something I'd go broadcasting quite so loudly, but maybe it's just me.
+
+You'll be able to jump in and help fix all those problems with your favorite language. Don't even try to tell me your favorite language doesn't have problems.
+
+You'll be able to vote with confidence against the tired majority when some of the smartest people in the world (like, oh, say, James Gosling and Guy Steele) try to introduce non-broken closures and real extensibility to the Java community. Those poor Java Community schmucks. I pity them all. Really I do.
+
+Heck, you might even start eating rich programmer food. Writing compilers is only the beginning; I never claimed it was the end of the road. You'll finally be able to move past your little service APIs and JavaScript widgets, and start helping to write the program that cures cancer, or all viruses worldwide, or old age and dying. Or even (I'm really going out on a limb here) the delusion of Static Typing as a deterministic panacea.
+
+If nothing else, you'll finally really learn whatever programming language you're writing a compiler for. There's no other way. Sorry!
+
+And with that, I suppose I should wrap up. I'm heading to Foo Camp in the morning, and I have no idea what to expect, but I have a pretty good guess that there won't be much discussion of compilers, except hopefully from GVR vis a vis Python 3000. That might be cool.
+
+If you don't know compilers, don't sweat it. I still think you're a good programmer. But it's good to have stretch goals!
+
+But What's The Most Important CS Course?
+
+Typing 101. Duh.
+
+Hie thee hence.
+POSTED BY STEVE YEGGE AT 11:51 PM 
+Newer Post Older Post Home
+
+QUICK LINKER
+
+BLOG ARCHIVE
+
+►  2010 (2)
+►  2009 (3)
+►  2008 (19)
+▼  2007 (12)
+►  December (2)
+►  September (2)
+►  August (1)
+▼  June (3)
+Rhino on Rails
+Rich Programmer Food
+That Old Marshmallow Maze Spell
+►  February (3)
+►  January (1)
+►  2006 (22)
+FEEDS
+
+Atom
+FeedBurner
+SOME FAVORITE LANGUAGES
+
+Ruby
+D language
+Jython
+Common Lisp
+Scheme
+JRuby
+Haskell
+Objective Caml
+MY SITES
+
+Stevey's Drunken Blog RantsTM
+Wyvern (my game)
+Stevey's Personal Blog
+ABOUT ME
+
+
+STEVE YEGGE
+VIEW MY COMPLETE PROFILE
+ 
+

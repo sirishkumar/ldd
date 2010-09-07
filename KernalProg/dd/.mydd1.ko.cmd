@@ -1,0 +1,1 @@
+cmd_/home/sirishkumar/projects/linux/KernalProg/dd/mydd1.ko := ld -r -m elf_i386 -T /usr/src/linux-headers-2.6.32-24-generic/scripts/module-common.lds --build-id -o /home/sirishkumar/projects/linux/KernalProg/dd/mydd1.ko /home/sirishkumar/projects/linux/KernalProg/dd/mydd1.o /home/sirishkumar/projects/linux/KernalProg/dd/mydd1.mod.o

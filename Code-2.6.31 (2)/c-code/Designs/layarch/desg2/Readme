@@ -1,0 +1,28 @@
+
+In This design we use three layers
+
+1) UI -- same as desg1 , but calls uses VIML instead of IML.
+
+2) VIML -- virtual image manuplation layer. This layer is responsible
+	   to make use of functions provided by IML.
+
+3) IML -- same as desg1 , with this design we can have multiple 
+	  implementataions to take care of different image formats.
+
+
+
+Note : In this example we have added two handlers.
+
+Follow the procedure to add new handler.
+
+1) implement a new handler with three functions in xxx.c
+
+2) add a global variable xxxhandler of type imageHandler and fill
+   it with pointers to the functions.
+
+3) add extern declaration to handlers.h file.
+
+4) add pointer to the above sturcture to the array imagehandlers in
+   config.c file.
+
+5) re-link your app.

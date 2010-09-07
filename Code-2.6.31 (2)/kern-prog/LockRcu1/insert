@@ -1,0 +1,2 @@
+insmod rcu_stack.ko		
+insmod rcu_reader1.ko

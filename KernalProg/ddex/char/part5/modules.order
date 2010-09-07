@@ -1,0 +1,5 @@
+kernel//home/veda/Code-2.6.30/ddex/char/part5/interrupt.ko
+kernel//home/veda/Code-2.6.30/ddex/char/part5/timer.ko
+kernel//home/veda/Code-2.6.30/ddex/char/part5/hrexamp.ko
+kernel//home/veda/Code-2.6.30/ddex/char/part5/wrkqueue.ko
+kernel//home/veda/Code-2.6.30/ddex/char/part5/mytasklet.ko

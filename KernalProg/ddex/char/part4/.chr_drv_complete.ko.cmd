@@ -1,0 +1,1 @@
+cmd_/home/veda/Code-2.6.30/ddex/char/part4/chr_drv_complete.ko := ld -r -m elf_x86_64  --build-id -o /home/veda/Code-2.6.30/ddex/char/part4/chr_drv_complete.ko /home/veda/Code-2.6.30/ddex/char/part4/chr_drv_complete.o /home/veda/Code-2.6.30/ddex/char/part4/chr_drv_complete.mod.o
